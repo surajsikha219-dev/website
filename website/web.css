@@ -1,0 +1,298 @@
+/* ------------------------------
+   BASIC RESET
+------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff8f0;
+  color: #333;
+}
+
+/* ------------------------------
+   HEADER
+------------------------------ */
+header {
+  width: 100%;
+  background: #ff7043;
+  color: #fff;
+  padding: 20px 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
+}
+
+/* ------------------------------
+   LOGO
+------------------------------ */
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+/* ------------------------------
+   NAVIGATION
+------------------------------ */
+nav {
+  flex-grow: 1;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  justify-content: flex-end;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  padding: 4px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+
+/* ------------------------------
+   HAMBURGER MENU
+------------------------------ */
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 28px;
+  z-index: 30;
+}
+
+.menu-btn div {
+  width: 28px;
+  height: 3px;
+  background: white;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* ------------------------------
+   HERO SECTION
+------------------------------ */
+.hero {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding: 120px 20px;
+  min-height: 500px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Blurred background image */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* black shade overlay */
+    url('homeimg.jpg') no-repeat center/cover; /* background image */
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Hero text and button */
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: #ff7043;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #151414;
+}
+
+/* ------------------------------
+   RESPONSIVE DESIGN
+------------------------------ */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: #ff7043;
+    transition: right 0.4s ease-in-out;
+    padding-top: 100px;
+    gap: 30px;
+  }
+
+  nav ul.active {
+    right: 0;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+  }
+}
+/* ------------------------------
+   CATEGORY CARDS
+------------------------------ */
+.categories {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #f0e5e5;
+ 
+
+}
+
+.categories h2 {
+  font-size: 32px;
+  color: #ff7043;
+  margin-bottom: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  height: 320px;
+  width: 250px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  transition: background 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(255, 112, 67, 0.3);
+}
+
+.card h3 {
+  font-size: 22px;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: #f9742c98 ;
+  border-radius: 15px;
+}
+
+
+.card .btn {
+  background: #ff7043;
+  color: #fff;
+  padding: 8px 20px;     /* smaller button size */
+  font-size: 14px;       /* slightly smaller text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+  align-self: center;    /* centers it horizontally */
+  margin-top: auto;      /* keeps it pushed to bottom */
+}
+
+
+
+.card .btn:hover {
+  background: #181717;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+
+  .card {
+    width: 65%;
+    height: 320px;
+  }
+}
+
+.card.veg {
+  background: url('veg.jpg') no-repeat center/cover;
+}
+
+.card.nonveg {
+  background: url('non veg.jpg') no-repeat center/cover;
+}
+
+.card.chinese {
+  background: url('chinese.jpg') no-repeat center/cover;
+}
+
+.card.tandoor {
+  background: url('tandoor.jpg') no-repeat center/cover;
+}
+
+
